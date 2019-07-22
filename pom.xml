@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itguigu</groupId>
+    <artifactId>hello-maven</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <properties>
+        <!-- 环境配置 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <!-- 统一的依赖管理 -->
+        <alibaba-druid.version>1.1.6</alibaba-druid.version>
+        <apache-httpclient.version>4.5.5</apache-httpclient.version>
+        <commons-email.version>1.5</commons-email.version>
+        <commons-fileupload.version>1.3.2</commons-fileupload.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <hibernate-validator.version>5.3.4.Final</hibernate-validator.version>
+        <jackson.version>2.9.5</jackson.version>
+        <jstl.version>1.2</jstl.version>
+        <junit.version>4.12</junit.version>
+        <kaptcha.version>2.3</kaptcha.version>
+        <log4j.version>1.2.17</log4j.version>
+        <lombok.version>1.16.18</lombok.version>
+        <mybaits-spring.version>1.3.1</mybaits-spring.version>
+        <mybatis.version>3.2.8</mybatis.version>
+        <mysql.version>5.1.46</mysql.version>
+        <servlet-api.version>3.1.0</servlet-api.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <spring.version>4.3.17.RELEASE</spring.version>
+    </properties>
+
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.3.17.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Json Begin -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <!-- Json End -->
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.kaptcha/kaptcha -->
+        <dependency>
+            <groupId>com.google.code.kaptcha</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <!-- Servlet Begin -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-email</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+    </dependencies>
+
+	<distributionManagement>  
+	  <repository>  
+		<id>nexus-releases</id>  
+		<name>Nexus Release Repository</name>  
+		<url>http://192.168.247.128:8081/repository/maven-releases/</url>  
+	  </repository>  
+	  <snapshotRepository>  
+		<id>nexus-snapshots</id>  
+		<name>Nexus Snapshot Repository</name>  
+		<url>http://192.168.247.128:8081/repository/maven-snapshots/</url>  
+	  </snapshotRepository>  
+	</distributionManagement> 
+
+
+
+	<repositories>
+    <repository>
+        <id>nexus-snapshotsaaa</id>
+        <name>Nexus Repository</name>
+        <url>http://192.168.247.128:8081/repository/maven-public/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>nexus</id>
+        <name>Nexus Plugin Repository</name>
+        <url>http://192.168.247.128:8081/repository/maven-public/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+    </pluginRepository>
+</pluginRepositories>
+    
+
+</project>
