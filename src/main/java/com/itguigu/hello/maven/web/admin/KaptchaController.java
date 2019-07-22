@@ -49,6 +49,8 @@ public class KaptchaController {
         ServletOutputStream out = response.getOutputStream();
         // write the data out
         ImageIO.write(bi, "jpg", out);
+
+        //TODO  daibanleibiao
         try {
             out.flush();
         } finally {
