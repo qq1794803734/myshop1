@@ -50,7 +50,7 @@ public class KaptchaController {
         // write the data out
         ImageIO.write(bi, "jpg", out);
 
-        //TODO  daibanleibiao
+        //TODO  daibanleibiao  tianjai
         try {
             out.flush();
         } finally {
